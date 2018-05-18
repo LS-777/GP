@@ -1,0 +1,37 @@
+ .bg-sec{
+  background: linear-gradient(20deg,#8fcff5,#20a0e9);
+}
+ 
+
+.section-heading{
+    color:#f6ae01;
+}
+
+
+h4{
+    color:#1f3d55;
+}
+
+.btn-proj{
+    background: #f6ae01;
+    color: rgba(31, 61, 85, 1);
+}
+
+.btn-proj:hover{
+    background:limegreen;
+    color:white;
+}
+
+
+
+hr {
+    width: 15%;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: 0;
+    border-top: 3px solid #f6ae01;
+  }
+
+ .text-primary{
+      color:#f6ae01 !important;
+  }  

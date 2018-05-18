@@ -1,0 +1,7 @@
+hr {
+    width: 15%;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: 0;
+    border-top: 3px solid rgba(31, 61, 85, 1);
+  }

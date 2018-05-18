@@ -1,0 +1,23 @@
+ <div class="text-center py-5">   
+    <h2 class="text-center text-uppercase font-weight-bold mt-5"> Latest Public Projects</h2>
+   <hr>
+ </div>
+
+
+
+
+<div class="row my-5 py-5 events">
+    <div class="col-md-4 mb-3" *ngFor="let event of events">
+      <div class="card text-center">
+        <div class="card-body">
+          <h5 class="card-title">{{event.name}}</h5>
+          <p class="card-text">{{event.description}}</p>
+          <a href="#" class="btn btn-primary">Buy Tickets</a>
+        </div>
+        <div class="card-footer text-muted">
+            <i class="far fa-calendar-alt"></i>
+            {{event.date | date:'shortDate'}}
+        </div>
+      </div>
+    </div>
+  </div>

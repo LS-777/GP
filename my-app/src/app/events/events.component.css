@@ -1,0 +1,13 @@
+/* .events{
+  background: linear-gradient(20deg,#8fcff5,#20a0e9,#1f3d55);
+}
+ */
+
+
+hr {
+    width: 15%;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: 0;
+    border-top: 3px solid rgba(31, 61, 85, 1);
+  }

@@ -1,0 +1,28 @@
+hr {
+    width: 15%;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: 0;
+    border-top: 3px solid rgba(31, 61, 85, 1);
+  }
+
+  .prez{
+  }
+
+  .project{
+    background: linear-gradient(20deg,#8fcff5,#20a0e9);
+
+  }
+
+  .btn-proj{
+      background: #f6ae01;
+      color: rgba(31, 61, 85, 1);
+  }
+
+  .card-end{
+      background:  rgba(31, 61, 85, 1);
+  }
+
+  .proj-date{
+      color:#f6ae01;
+  }
