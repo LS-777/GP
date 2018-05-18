@@ -1,16 +1,17 @@
+/*------- IMPORTING MODULES ------ */
+
 const express = require('express')
 const jwt = require('jsonwebtoken')
 const router = express.Router()
 const User = require('../models/user')
 const mongoose = require('mongoose')
 const db = "mongodb://userlionel:passwordlionel@ds111410.mlab.com:11410/eventsdb"
+/*  -------   */ 
 
 
 
+/*------ DATABASE CONNECTION (ON A SERVER), BETTER TO GET THE APP EVERYWHERE---- */
 
-
-
-//connect db to server
 mongoose.connect(db, err => {
     if(err) {
         console.error('Error in connecting mongodb' + err)
@@ -18,6 +19,10 @@ mongoose.connect(db, err => {
         console.log('Connected to mongodb')
     }
 })
+/*  -------   */ 
+
+
+/* -----TOKEN MANAGEMENT -------*/
 
 function verifyToken(req, res, next) {
     if (!req.headers.authorization) {
@@ -34,14 +39,16 @@ function verifyToken(req, res, next) {
     req.userId = payload.subject
     next()
 }
+/*  -------   */ 
 
 
+
+/* -----ROUTES----- */
 
 //display this msg in localhost:3000/api 
 router.get('/', (req, res) => {
     res.send('From API route')
 })
-
 
 // register = get user informations, save em in the db, return an err is there is one, and return user details if OK
 router.post('/register', (req, res) => {
@@ -57,8 +64,6 @@ router.post('/register', (req, res) => {
         }
     })
 })
-
-
 
 
 // login => check user data entries to match with theses saved before
@@ -83,6 +88,8 @@ router.post('/login', (req, res) => {
     })
 })
 
+
+//events routes, TODO: get the user able to post his own events in the events page 
 router.get('/events', (req, res) => {
     let events = [
         {
@@ -168,3 +175,6 @@ router.get('/special', verifyToken, (req, res) => {
 })
 
 module.exports = router
+
+
+/*  -------   */ 
