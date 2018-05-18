@@ -5,3 +5,13 @@ hr {
     border: 0;
     border-top: 3px solid rgba(31, 61, 85, 1);
   }
+
+  .short-popular-category-list ul li a {
+    border: 1px solid #1f3d55;
+    border-radius: 7%;
+    background-color: #f6ae01;
+    color: #1f3d55;
+    font-weight: bold;
+    padding: 4px 10px;
+    font-size: 12px;
+  }

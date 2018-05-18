@@ -168,9 +168,20 @@
 <div class="row my-5 py-5 events">
     <div class="col-md-4 mb-3" *ngFor="let event of events">
       <div class="card text-center">
+        <div class="card-header">
+            <h5 class="card-title">{{event.name}}</h5>
+        </div>
         <div class="card-body">
-          <h5 class="card-title">{{event.name}}</h5>
           <p class="card-text">{{event.description}}</p>
+          <p class="">Category:</p>
+          <div class="short-popular-category-list2 text-center">
+          <ul class="list-inline">
+              <li class="list-inline-item">
+                <a href="">
+                  {{event.category}}</a>
+              </li>
+          </ul>
+          </div>
           <a href="#" class="btn btn-primary">Join</a>
         </div>
         <div class="card-footer text-muted">

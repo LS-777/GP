@@ -190,6 +190,19 @@ color: #f6ae01 !important;
   font-size: 12px;
 }
 
+
+.short-popular-category-list2 ul li a {
+  border: 1px solid #1f3d55;
+  border-radius: 7%;
+  background-color: #f6ae01;
+  color: #1f3d55;
+  font-weight: bold;
+  padding: 4px 10px;
+  font-size: 12px;
+}
+
+
+
 .short-popular-category-list ul li a i {
   margin-right: 2px;
 }
@@ -237,7 +250,7 @@ hr {
 }
 
 .btn-proj{
-    background: #f6ae01;
+    background: limegreen;
     color: rgba(31, 61, 85, 1);
 }
 

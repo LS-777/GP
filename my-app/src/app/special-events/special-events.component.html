@@ -1,3 +1,5 @@
+<div class="container mt-5">
+
 <section id="prez mb-5 py-5" data-aos="zoom-in-up">
 
     <div class="text-center py-5">   
@@ -7,10 +9,21 @@
 <div class="row my-5 py-5">
     <div class="col-md-4 mb-3" *ngFor="let event of specialEvents">
       <div class="card text-center">
+          <div class="card-header">
+              <h5 class="card-title">{{event.name}}</h5>
+          </div>
         <div class="card-body">
-          <h5 class="card-title">{{event.name}}</h5>
           <p class="card-text">{{event.description}}</p>
-          <a href="#" class="btn btn-success">Buy Tickets</a>
+          <p class="">Category:</p>
+          <div class="short-popular-category-list text-center">
+
+            <ul class="list-inline">
+                <li class="list-inline-item">
+                  <a href="">{{event.category}}</a>
+                </li>
+            </ul>
+          </div>
+          <a href="#" class="btn btn-success">Join</a>
         </div>
         <div class="card-footer text-muted">
           {{event.date | date:'shortDate'}}
@@ -19,3 +32,4 @@
     </div>
 </div>
 </section>
+</div>

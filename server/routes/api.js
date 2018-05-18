@@ -1,11 +1,11 @@
 /*------- IMPORTING MODULES ------ */
 
-const express = require('express')
-const jwt = require('jsonwebtoken')
-const router = express.Router()
-const User = require('../models/user')
-const mongoose = require('mongoose')
-const db = "mongodb://userlionel:passwordlionel@ds111410.mlab.com:11410/eventsdb"
+const express = require('express');
+const jwt = require('jsonwebtoken');
+const router = express.Router();
+const User = require('../models/user');
+const mongoose = require('mongoose');
+const db = "mongodb://userlionel:passwordlionel@ds111410.mlab.com:11410/eventsdb";
 /*  -------   */ 
 
 
@@ -14,9 +14,9 @@ const db = "mongodb://userlionel:passwordlionel@ds111410.mlab.com:11410/eventsdb
 
 mongoose.connect(db, err => {
     if(err) {
-        console.error('Error in connecting mongodb' + err)
+        console.error('Error in connecting mongodb' + err);
     } else {
-        console.log('Connected to mongodb')
+        console.log('Connected to mongodb');
     }
 })
 /*  -------   */ 
@@ -26,18 +26,18 @@ mongoose.connect(db, err => {
 
 function verifyToken(req, res, next) {
     if (!req.headers.authorization) {
-        return res.status(401).send('Unauthorized request')
+        return res.status(401).send('Unauthorized request');
     }
-    let token = req.headers.authorization.split(' ')[1]
+    let token = req.headers.authorization.split(' ')[1];
     if (token === "null") {
-        return res.status(401).send('Unauthorized request')
+        return res.status(401).send('Unauthorized request');
     }
-    let payload = jwt.verify(token, 'secretKey')
+    let payload = jwt.verify(token, 'secretKey');
     if(!payload) {
-        return res.status(401).send('Unauthorized request')
+        return res.status(401).send('Unauthorized request');
     }
-    req.userId = payload.subject
-    next()
+    req.userId = payload.subject;
+    next();
 }
 /*  -------   */ 
 
@@ -59,7 +59,7 @@ router.post('/register', (req, res) => {
             console.log(error)
         } else {
             let payload = { subject: registeredUser._id }
-            let token = jwt.sign(payload, 'secretKey')
+            let token = jwt.sign(payload, 'secretKey');
             res.status(200).send({token})
         }
     })
@@ -78,11 +78,11 @@ router.post('/login', (req, res) => {
                 res.status(401).send('Unknown email')
             } else 
             if (user.password !== userData.password) {
-                res.status(401).send('Invalid password')
+                res.status(401).send('Invalid password');
             } else {
                 let payload = { subject: user._id }
-                let token = jwt.sign(payload, 'secretKey')
-                res.status(200).send({token})
+                let token = jwt.sign(payload, 'secretKey');
+                res.status(200).send({token});
             }
         }
     })
@@ -96,85 +96,96 @@ router.get('/events', (req, res) => {
             "_id": "1",
             "name": "Super Project",
             "description": "Awesome",
+            "category": "Angular",
             "date": "2018-06-23T18:25:43.511Z"
         },
         {
             "_id": "2",
             "name": "Super Project",
             "description": "Awesome",
+            "category": "Angular",
             "date": "2018-06-23T18:25:43.511Z"
         },
         {
             "_id": "3",
             "name": "Super Project",
             "description": "Awesome",
+            "category": "Angular",
             "date": "2018-06-23T18:25:43.511Z"
         },
         {
             "_id": "4",
             "name": "Super Project",
             "description": "Awesome",
+            "category": "Angular",
             "date": "2018-06-23T18:25:43.511Z"
         },
         {
             "_id": "5",
             "name": "Super Project",
             "description": "Awesome",
+            "category": "Angular",
             "date": "2018-06-23T18:25:43.511Z"
         },
         {
             "_id": "6",
             "name": "Super Project",
             "description": "Awesome",
+            "category": "Angular",
             "date": "2018-06-23T18:25:43.511Z"
         }
-    ]
-    res.json(events)
-})
+    ];
+    res.json(events);
+});
 
 router.get('/special', verifyToken, (req, res) => {
-    let events = [
+    let specialEvents = [        
         {
             "_id": "1",
             "name": "Super Project",
             "description": "Awesome",
+            "category": "Angular",
             "date": "2018-06-23T18:25:43.511Z"
         },
         {
             "_id": "2",
             "name": "Super Project",
             "description": "Awesome",
+            "category": "Angular",
             "date": "2018-06-23T18:25:43.511Z"
         },
         {
             "_id": "3",
             "name": "Super Project",
             "description": "Awesome",
+            "category": "Angular",
             "date": "2018-06-23T18:25:43.511Z"
         },
         {
             "_id": "4",
             "name": "Super Project",
             "description": "Awesome",
+            "category": "Angular",
             "date": "2018-06-23T18:25:43.511Z"
         },
         {
             "_id": "5",
             "name": "Super Project",
             "description": "Awesome",
+            "category": "Angular",
             "date": "2018-06-23T18:25:43.511Z"
         },
         {
             "_id": "6",
             "name": "Super Project",
             "description": "Awesome",
+            "category": "Angular",
             "date": "2018-06-23T18:25:43.511Z"
         }
-    ]
-    res.json(events)
+    ];
+    res.json(specialEvents);
 })
 
-module.exports = router
+module.exports = router;
 
 
-/*  -------   */ 
