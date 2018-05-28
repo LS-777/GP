@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
-
 import { AppComponent } from './app.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
@@ -14,10 +13,10 @@ import { EventService } from './event.service';
 import { NavbarComponent } from './navbar/navbar.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-import { DescComponent } from './desc/desc.component';
-import { PrezComponent } from './prez/prez.component';
 import { AuthGuard } from './auth.guard';
 import { TokenInterceptorService } from './token-interceptor.service';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { UserService } from './user.service';
 
 @NgModule({
   declarations: [
@@ -29,17 +28,16 @@ import { TokenInterceptorService } from './token-interceptor.service';
     NavbarComponent,
     HeaderComponent,
     FooterComponent,
-    DescComponent,
-    PrezComponent
-  ],
+    DashboardComponent
+    ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
     AppRoutingModule
-  ], 
-  providers: [AuthService, AuthGuard, EventService,
-  {
+  ],
+  providers: [AuthService, AuthGuard, EventService, UserService
+  , {
     provide: HTTP_INTERCEPTORS,
     useClass: TokenInterceptorService,
     multi: true

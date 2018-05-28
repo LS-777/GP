@@ -9,8 +9,7 @@
   background-repeat: no-repeat;
   background-position: center;
   border-bottom: .33vh solid #183043;
-  height: 77vh;
-  width: 100wh;
+
 }
 
 
@@ -241,18 +240,10 @@ hr {
 
 }
 
-.prez{
-}
-
 .project{
   background: linear-gradient(20deg,#8fcff5,#20a0e9);
-
 }
 
-.btn-proj{
-    background: limegreen;
-    color: rgba(31, 61, 85, 1);
-}
 
 .card-end{
     background:  rgba(31, 61, 85, 1);
@@ -261,6 +252,23 @@ hr {
 .proj-date{
     color:#f6ae01;
 }
+
+.btn-proj {
+  border-color: #1f3d55 !important;
+  background: limegreen !important;
+  color: rgba(31, 61, 85, 1);
+}
+
+.short-popular-category-list ul li p {
+  border: 1px solid #1f3d55;
+  border-radius: 7%;
+  background-color: #f6ae01;
+  color: #1f3d55;
+  font-weight: bold;
+  padding: 4px 10px;
+  font-size: 12px;
+}
+
 
 /* END PRESENTATION */
 
@@ -289,7 +297,6 @@ h4{
     background:limegreen;
     color:white;
 }
-
 
 
 hr {

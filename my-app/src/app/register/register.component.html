@@ -2,13 +2,18 @@
       <div class= "col-md-5 reg-bg d-inline-block my-5 mx-auto">
           <img src="../../assets/handshake.png" class="reg-bg-img img-fluid" alt="register-welcome"/>
     </div>
-    <div class="col-md-5 d-inline-block my-5 mx-auto">
+    <div class="col-md-5 d-inline-block my-auto mx-auto">
+      <h4 class="mb-4"> Join the Nation &amp; build a solid bu$iness team.</h4>
         <div class="card form-wh">
       <div class="card-header form-header">
         <h3 class="mb-0">Register</h3>
      </div>
      <div class="card-body">
        <form class="form">
+          <div class="form-group">
+              <label for="">Username</label>
+              <input [(ngModel)]="registerUserData.username" name="username" type="text"  class="form-control rounded-0" required>
+            </div>
          <div class="form-group">
            <label for="">Email</label>
            <input [(ngModel)]="registerUserData.email" name="email" type="text"  class="form-control rounded-0" required>
@@ -25,6 +30,4 @@
      </div>
     </div>
    </div>
-
-  
 </section>

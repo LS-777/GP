@@ -1,35 +1,32 @@
-<div class="container mt-5">
-
-<section id="prez mb-5 py-5" data-aos="zoom-in-up">
-
-    <div class="text-center py-5">   
-        <h2 class="text-center text-uppercase font-weight-bold mt-5"> Latest VIP Projects</h2>
-       <hr>
-     </div>
-<div class="row my-5 py-5">
-    <div class="col-md-4 mb-3" *ngFor="let event of specialEvents">
-      <div class="card text-center">
-          <div class="card-header">
-              <h5 class="card-title">{{event.name}}</h5>
+<section id="prez py-5" data-aos="zoom-in-up">
+  <div class="container py-5">
+    <div class="py-5">
+      <h2 class="text-center text-uppercase font-weight-bold mt-5">Latest VIP Projects</h2>
+      <hr>
+    </div>
+    <div class="row py-5">
+      <div class="col-md-4 mb-3" *ngFor="let event of specialEvents">
+        <div class="card text-center border border-dark">
+          <div class="card-header card-end">
+            <h5 class="card-title text-light text-uppercase">{{event.name}}</h5>
           </div>
-        <div class="card-body">
-          <p class="card-text">{{event.description}}</p>
-          <p class="">Category:</p>
-          <div class="short-popular-category-list text-center">
-
-            <ul class="list-inline">
+          <div class="card-body project">
+            <p class="card-text text-light">{{event.description}}</p>
+            <div class="short-popular-category-list">
+              <ul class="list-inline">
                 <li class="list-inline-item">
-                  <a href="">{{event.category}}</a>
+                  <p>{{event.category}}</p>
                 </li>
-            </ul>
+              </ul>
+            </div>
+            <a href="#" class="btn btn-block btn-proj font-weight-bold border">JOIN</a>
           </div>
-          <a href="#" class="btn btn-success">Join</a>
-        </div>
-        <div class="card-footer text-muted">
-          {{event.date | date:'shortDate'}}
+          <div class="card-footer text-light card-end proj-date">
+            <i class="far fa-calendar-alt"></i>
+            {{event.date | date:'shortDate'}}
+          </div>
         </div>
       </div>
     </div>
-</div>
+  </div>
 </section>
-</div>

@@ -1,17 +1,45 @@
-hr {
-    width: 15%;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    border: 0;
-    border-top: 3px solid rgba(31, 61, 85, 1);
-  }
+body{
 
-  .short-popular-category-list ul li a {
-    border: 1px solid #1f3d55;
-    border-radius: 7%;
-    background-color: #f6ae01;
-    color: #1f3d55;
-    font-weight: bold;
-    padding: 4px 10px;
-    font-size: 12px;
-  }
+
+  font-family: 'Fira Sans', sans-serif !important;
+
+}
+hr {
+  width: 15%;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: 0;
+  border-top: 3px solid rgba(31, 61, 85, 1);
+}
+
+.project {
+  background: linear-gradient(20deg, #8fcff5, #20a0e9);
+}
+
+.btn-proj {
+  border-color: #1f3d55 !important;
+  background: limegreen;
+  color: rgba(31, 61, 85, 1);
+}
+
+.btn-proj:hover{
+  color:white;
+}
+
+.card-end {
+  background: rgba(31, 61, 85, 1);
+}
+
+.proj-date {
+  color: #f6ae01;
+}
+
+.short-popular-category-list ul li p {
+  border: 1px solid #1f3d55;
+  border-radius: 7%;
+  background-color: #f6ae01;
+  color: #1f3d55;
+  font-weight: bold;
+  padding: 4px 10px;
+  font-size: 12px;
+}
