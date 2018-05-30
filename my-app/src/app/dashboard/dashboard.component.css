@@ -55,6 +55,37 @@
 }
 
 
+/* PRESENTATION PART */
+
+  .project{
+    background: linear-gradient(20deg,#8fcff5,#20a0e9);
+  }
+  
+  
+  .card-end{
+      background:  rgba(31, 61, 85, 1);
+  }
+  
+  .proj-date{
+      color:#f6ae01;
+  }
+  
+  .btn-proj {
+    background: limegreen !important;
+    color: rgba(31, 61, 85, 1);
+  }
+  
+  .short-popular-category-list ul li p {
+    border: 1px solid #1f3d55;
+    background-color: #f6ae01;
+    color: #1f3d55;
+    font-weight: bold;
+    padding: 4px 10px;
+    font-size: 12px;
+  }
+  
+
+
 /* .blink{
     color: rgb (0, 137, 226);
     animation: blink 1s infinite;

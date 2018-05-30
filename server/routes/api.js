@@ -10,7 +10,7 @@ const db = "mongodb://userlionel:passwordlionel@ds111410.mlab.com:11410/eventsdb
 
 
 
-/**** function sendToken() will be offten used    ******/
+/**** function sendToken() will be often used    ******/
 function sendToken(user, res){
     let token = jwt.sign(user.id, 'secretKey');
     console.log(user);
@@ -59,12 +59,12 @@ function verifyToken(req, res, next) {
 
 
 /* -----ROUTES----- */
-//display this msg in localhost:3000/api 
+//display this msg in localhost:3000/api to check if all works
 router.get('/', (req, res) => {
     res.send('From API route');
 });
 
-// register = get user informations, save em in the db, return an err is there is one, and return user details if OK
+// register = get user informations, save em in the db, return an err if there is one, and return user details if OK(removed here)
 router.post('/register', (req, res) => {
     let userData = req.body;
     let user = new User(userData);
@@ -98,7 +98,7 @@ router.post('/login', (req, res) => {
     });
 });
 
-//GET USERS
+//GET USER (GET) for showing its data in the dashboard
 router.get('/:userId', (req, res, next) => {
     User.findById({ _id: req.params.userId }, (err, user) => {
         if (err) return next(err);
@@ -109,7 +109,7 @@ router.get('/:userId', (req, res, next) => {
     });
 });
 
-//POST USER FOR UPDATE
+// UPDATE USER (POST) (in dashboard too)
 router.post('/edit/:userId', (req, res, next) => {
     User.findByIdAndUpdate({ _id: req.params.userId }, req.body, (err, user) => {
         if (err) return next(err);
@@ -119,7 +119,7 @@ router.post('/edit/:userId', (req, res, next) => {
     });
 });
 
-//POST USER FOR UPDATE
+//DELETE USER (DELETE) (in dashboard too)
 router.delete('/remove/:userId', (req, res, next) => {
     User.findByIdAndRemove({ _id: req.params.userId }, req.body, (err, user) => {
         if (err) return next(err);
