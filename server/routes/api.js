@@ -10,23 +10,6 @@ const db = "mongodb://userlionel:passwordlionel@ds111410.mlab.com:11410/eventsdb
 
 
 
-/**** function sendToken() will be often used    ******/
-function sendToken(user, res){
-    let token = jwt.sign(user.id, 'secretKey');
-    console.log(user);
-
-    res.status(200).json({
-        userId: user.id,
-        token
-    });
-}
-/********* **********/
-
-
-
-
-
-
 /*------ DATABASE CONNECTION (ON A SERVER), BETTER TO GET THE APP EVERYWHERE---- */
 mongoose.connect(db, err => {
     if(err) {
@@ -54,11 +37,30 @@ function verifyToken(req, res, next) {
     req.userId = payload.subject;
     next();
 }
-/*  -------   */ 
+
+
+/**** function sendToken() will be often used    ******/
+function sendToken(user, res){
+    let token = jwt.sign(user.id, 'secretKey');
+    console.log(user);
+
+    res.status(200).json({
+        userId: user.id,
+        token
+    });
+}
+
+
+
+/********* **********/
+
+
+
 
 
 
 /* -----ROUTES----- */
+
 //display this msg in localhost:3000/api to check if all works
 router.get('/', (req, res) => {
     res.send('From API route');
@@ -115,7 +117,6 @@ router.post('/edit/:userId', (req, res, next) => {
         if (err) return next(err);
         console.log(user);
         res.json(req.body);
-
     });
 });
 
@@ -131,50 +132,29 @@ router.delete('/remove/:userId', (req, res, next) => {
 
 //events routes, TODO: get the user able to post his own events in the events page 
 router.get('/events', (req, res) => {
-    let events = [
+    let events = [ 
         {
-            "_id": "1",
-            "name": "Super Project",
-            "description": "Awesome Project without Lorem Ipsum Vivamus at odio ligula. Nunc eget arcu tincidunt, semper dui eu, ultrices lorem. Nunc placerat, arcu nec scelerisque pellentesque, tortor arcu viverra mauris, eu congue turpis nibh mattis magna.",
-            "category": "Angular",
-            "date": "2018-06-23T18:25:43.511Z"
-        },
-        {
-            "_id": "2",
-            "name": "Super Project",
-            "description": "Awesome Project without Lorem Ipsum Vivamus at odio ligula. Nunc eget arcu tincidunt, semper dui eu, ultrices lorem. Nunc placerat, arcu nec scelerisque pellentesque, tortor arcu viverra mauris, eu congue turpis nibh mattis magna.",
-            "category": "Angular",
-            "date": "2018-06-23T18:25:43.511Z"
-        },
-        {
-            "_id": "3",
-            "name": "Super Project",
-            "description": "Awesome Project without Lorem Ipsum Vivamus at odio ligula. Nunc eget arcu tincidunt, semper dui eu, ultrices lorem. Nunc placerat, arcu nec scelerisque pellentesque, tortor arcu viverra mauris, eu congue turpis nibh mattis magna.",
-            "category": "Angular",
-            "date": "2018-06-23T18:25:43.511Z"
-        },
-        {
-            "_id": "4",
-            "name": "Super Project",
-            "description": "Awesome Project without Lorem Ipsum Vivamus at odio ligula. Nunc eget arcu tincidunt, semper dui eu, ultrices lorem. Nunc placerat, arcu nec scelerisque pellentesque, tortor arcu viverra mauris, eu congue turpis nibh mattis magna.",
-            "category": "Angular",
-            "date": "2018-06-23T18:25:43.511Z"
-        },
-        {
-            "_id": "5",
-            "name": "Super Project",
-            "description": "Awesome Project without Lorem Ipsum Vivamus at odio ligula. Nunc eget arcu tincidunt, semper dui eu, ultrices lorem. Nunc placerat, arcu nec scelerisque pellentesque, tortor arcu viverra mauris, eu congue turpis nibh mattis magna.",
-            "category": "Angular",
-            "date": "2018-06-23T18:25:43.511Z"
-        },
-        {
-            "_id": "6",
-            "name": "Super Project",
-            "description": "Awesome Project without Lorem Ipsum Vivamus at odio ligula. Nunc eget arcu tincidunt, semper dui eu, ultrices lorem. Nunc placerat, arcu nec scelerisque pellentesque, tortor arcu viverra mauris, eu congue turpis nibh mattis magna.",
-            "category": "Angular",
-            "date": "2018-06-23T18:25:43.511Z"
-        }
-    ];
+        "_id": "1",
+        "name": "Super Project",
+        "description": "Awesome Project without Lorem Ipsum Vivamus at odio ligula. Nunc eget arcu tincidunt, semper dui eu, ultrices lorem. Nunc placerat, arcu nec scelerisque pellentesque, tortor arcu viverra mauris, eu congue turpis nibh mattis magna.",
+        "category": "Angular",
+        "date": "2018-06-23T18:25:43.511Z"
+    },
+    {
+        "_id": "2",
+        "name": "Super Project",
+        "description": "Awesome Project without Lorem Ipsum Vivamus at odio ligula. Nunc eget arcu tincidunt, semper dui eu, ultrices lorem. Nunc placerat, arcu nec scelerisque pellentesque, tortor arcu viverra mauris, eu congue turpis nibh mattis magna.",
+        "category": "Angular",
+        "date": "2018-06-23T18:25:43.511Z"
+    },
+    {
+        "_id": "3",
+        "name": "Super Project",
+        "description": "Awesome Project without Lorem Ipsum Vivamus at odio ligula. Nunc eget arcu tincidunt, semper dui eu, ultrices lorem. Nunc placerat, arcu nec scelerisque pellentesque, tortor arcu viverra mauris, eu congue turpis nibh mattis magna.",
+        "category": "Angular",
+        "date": "2018-06-23T18:25:43.511Z"
+    }
+];
     res.json(events);
 });
 

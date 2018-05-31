@@ -226,19 +226,15 @@ color: #f6ae01 !important;
 
 /* PRESENTATION PART */
 
-hr {
-  width: 15%;
+.hr-blue {
+  width: 5%;
   margin-top: 1rem;
   margin-bottom: 1rem;
   border: 0;
   border-top: 3px solid rgba(31, 61, 85, 1);
 }
 
-.white-divider{
-  
-  border-top: 3px solid white;
 
-}
 
 .project{
   background: linear-gradient(20deg,#8fcff5,#20a0e9);
@@ -299,8 +295,8 @@ h4{
 }
 
 
-hr {
-    width: 15%;
+.hr-white {
+    width: 5%;
     margin-top: 1rem;
     margin-bottom: 1rem;
     border: 0;
@@ -317,13 +313,5 @@ hr {
 
 
 
-/* EVENTS PART */
 
-hr {
-    width: 15%;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    border: 0;
-    border-top: 3px solid rgba(31, 61, 85, 1);
-  }
   /* END EVENTS */

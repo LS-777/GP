@@ -1,70 +1,115 @@
-<section class="row py-5 my-5" *ngIf="userData">
-  <!-- welcome message & project list part-->
-  <div class="mx-auto text-center d-block">
-    <h3 class="mt-5 ml-5">Hi {{userData.username}}!</h3>
+<section class="pb-5 mb-5" *ngIf="userData">
+
+  <!-- Header banner-->
+  <div class="row bg-sec pb-4">
+    <div class="mx-auto text-center col-12">
+      <img class="img-fluid" src="../../assets/dashboard.png">
+
+
+      <!-- welcome message -->
+      <h3 class="mt-5 text-light">Hi {{userData.username}}!</h3>
+      <p class="text-light font-weight-bold">Here you can
+        <a href="">manage your projects</a>, create some &amp; change your infos instantly.</p>
+    </div>
   </div>
-  <div class="col-md-5 my-5 mx-auto d-block">
-    <h4>Here you can manage your projects, or create ones.
-    </h4>
 
 
-    <div class="col-md-6 col-sm-12 pt-5">
-      <div class="card text-center mt-5">
-        <div class="card-header card-end">
-          <h5 class="card-title text-light">PROJECT_NAME</h5>
+
+
+
+  <div class="row">
+    <!-- user account editing part-->
+    <div class="col-lg-6 col-md-10 col-sm-11 d-inline-block my-5 mx-auto">
+      <div class="card form-wh">
+        <div class="card-header form-header">
+          <h3 class="mb-0">Edit account</h3>
         </div>
-        <div class="card-body  project">
-          <p class="card-text">PROJECT_DESCRIPTION</p>
-          <div class="short-popular-category-list">
-            <ul class="list-inline">
-              <li class="list-inline-item">
-                <p>Category</p>
-              </li>
-            </ul>
+        <div class="card-body">
+          <div class="text-right mb-5">
+            <h5 class="float-right d-block blink">You can instantly change your account details.</h5>
           </div>
-          <a href="#" class="btn btn-block btn-proj font-weight-bold border">JOIN</a>
+          <form class="form">
+            <div class="form-group">
+              <label for="">New Username</label>
+              <input [(ngModel)]="userData.username" name="username" type="text" class="form-control rounded-0">
+            </div>
+            <div class="form-group">
+              <label for="">New Email</label>
+              <input [(ngModel)]="userData.email" name="email" type="text" class="form-control rounded-0">
+            </div>
+            <div class="form-group">
+              <label for="">New Password</label>
+              <input [(ngModel)]="userData.password" name="password" type="password" class="form-control rounded-0">
+            </div>
+
+            <div class="form-group mx-auto mt-5">
+              <button (click)="saveUser()" type="button" class="btn btn-primary btn-lg">Save</button> or...
+              <button (click)="deleteUser()" type="button" class="btn btn-danger btn-lg">Delete account</button>
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <!-- get a list of users projects HERE-->
+
+
+
+
+
+
+
+  <div class="text-center mt-5 pt-5">
+    <h2 class="text-center text-uppercase font-weight-bold"> Post a project</h2>
+    <hr>
+  </div>
+  <div class="row">
+
+    <div class="col-md-4 mx-auto text-center">
+      <!-- project card POST form-->
+      <div class="card mx-auto text-center mt-5">
+        <div class="card-header card-end">
+
+          <label for="" class="text-light">PROJECT_NAME</label>
+          <div class="form-group">
+            <input [(ngModel)]="userData.projectName" name="project_name" type="text" class="form-control rounded-0" placeholder="Superb Project">
+          </div>
+
+        </div>
+        <div class="card-body project">
+          <label for="">PROJECT_DESCRIPTION</label>
+          <div class="form-group">
+            <textarea [(ngModel)]="userData.projectDesc" name="project_description" type="text" class="form-control rounded-0" placeholder="An awesome project ready to be done">
+            </textarea>
+          </div>
+          <div class="short-popular-category-list mb-0">
+            <label for="" class="category">PROJECT_CATEGORY</label>
+          </div>
+          <div class="form-group mt-0">
+            <input [(ngModel)]="userData.projectCat" name="project_category" type="text" class="form-control rounded-0" placeholder="angular">
+          </div>
+          <a href="#" class="btn btn-block btn-proj font-weight-bold border">POST YOUR PROJECT</a>
         </div>
         <div class="card-footer text-light card-end proj-date">
-          <i class="far fa-calendar-alt"></i>
-          01/01/2018
+          <label for="">PROJECT_DATE</label>
+          <div class="form-group mt-0">
+            <input [(ngModel)]="userData.projectDate" name="project_date" type="date" class="form-control rounded-0">
+          </div>
+
         </div>
       </div>
+      <!-- end project card -->
     </div>
   </div>
 
 
 
-  <!-- user account editing part-->
-  <div class="col-md-5 d-inline-block my-5 mx-auto">
-    <div class="card form-wh">
-      <div class="card-header form-header">
-        <h3 class="mb-0">Edit account</h3>
-      </div>
-      <div class="card-body">
-        <div class="text-right mb-5">
-          <h5 class="float-right d-block blink">You can instantly change your account details.</h5>
-        </div>
-        <form class="form">
-          <div class="form-group">
-            <label for="">New Username</label>
-            <input [(ngModel)]="userData.username" name="username" type="text" class="form-control rounded-0">
-          </div>
-          <div class="form-group">
-            <label for="">New Email</label>
-            <input [(ngModel)]="userData.email" name="email" type="text" class="form-control rounded-0">
-          </div>
-          <div class="form-group">
-            <label for="">New Password</label>
-            <input [(ngModel)]="userData.password" name="password" type="password" class="form-control rounded-0">
-          </div>
 
-          <div class="form-group mx-auto mt-5">
-            <button (click)="saveUser()" type="button" class="btn btn-primary btn-lg">Save</button> or...
-            <button (click)="deleteUser()" type="button" class="btn btn-danger btn-lg">Delete account</button>
-          </div>
 
-        </form>
-      </div>
-    </div>
-  </div>
+
 </section>

@@ -21,7 +21,6 @@ const routes: Routes = [
   {
     path: 'special',
     component: SpecialEventsComponent,
-    canActivate: [AuthGuard]
   },
   {
     path: 'login',
@@ -33,7 +32,9 @@ const routes: Routes = [
   },
   {
     path: 'dashboard',
-    component: DashboardComponent
+    component: DashboardComponent,
+    canActivate: [AuthGuard]
+
   },
 
 ];
