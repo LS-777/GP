@@ -1,7 +1,11 @@
 const mongoose = require('mongoose');
-
 const Schema = mongoose.Schema;
+
 const eventSchema = new Schema({
+    owner: {           // makes belong the event to who posted it
+        type: Schema.Types.ObjectId,
+        ref: "User"
+    },
     name: {
         type: String,
         required: true
@@ -15,10 +19,7 @@ const eventSchema = new Schema({
     },
     date: {
         type: String,
-        required: true
     },
 });
 
-const model = mongoose.model('event', eventSchema, 'events');
-
-module.exports = model;
+module.exports = mongoose.model('event', eventSchema, 'events');

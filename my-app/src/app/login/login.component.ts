@@ -22,12 +22,15 @@ export class LoginComponent implements OnInit {
       .subscribe(
         res => {
           console.log(res),
-          localStorage.setItem('token', res.token);
+            localStorage.setItem('token', res.token);
           localStorage.setItem('userId', res.userId);
           console.log(this._auth.userId);
           this._router.navigate(['/dashboard']);
         },
-        err => console.log(err)
+        err => {
+          console.log(err);
+          alert('Invalid email or password, please check or register');
+        }     // try to make better errmsg and presentation
       );
   }
 }

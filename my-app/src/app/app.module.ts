@@ -7,7 +7,6 @@ import { AppComponent } from './app.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { EventsComponent } from './events/events.component';
-import { SpecialEventsComponent } from './special-events/special-events.component';
 import { AuthService } from './auth.service';
 import { EventService } from './event.service';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -17,6 +16,7 @@ import { AuthGuard } from './auth.guard';
 import { TokenInterceptorService } from './token-interceptor.service';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { UserService } from './user.service';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -24,11 +24,11 @@ import { UserService } from './user.service';
     RegisterComponent,
     LoginComponent,
     EventsComponent,
-    SpecialEventsComponent,
     NavbarComponent,
     HeaderComponent,
     FooterComponent,
-    DashboardComponent
+    DashboardComponent,
+    HomeComponent
     ],
   imports: [
     BrowserModule,
