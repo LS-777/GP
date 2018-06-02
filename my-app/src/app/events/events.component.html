@@ -1,39 +1,33 @@
-<div class="container mt-5">
-  <!-- ---------EVENTS LIST PART---------->
-  <section>
-    <div class="text-center py-5">
-      <h2 class="text-center text-uppercase font-weight-bold mt-5">Latest Projects</h2>
-      <hr class="hr-blue">
+<!-- ---------EVENTS LIST PART---------->
+<section class="">
+  <!-- Header banner-->
+  <div class="row bg-sec pb-4">
+    <div class="mx-auto text-center col-12 mt-5">
+
+      <!-- welcome message -->
+      <h3 class="mt-5 text-light">Here we are!</h3>
+      <p class="text-light font-weight-bold mt-5 mx-2">You can see all pending projects - see them all, sort them by aplphabetical order, or only see yours - let's work!
+      </p>
+      <img class="img-fluid project-img mt-5" src="../../assets/projects.png">
+
+
+
     </div>
-
-
-    <!-- Advanced Search
-        
-        <div class="advance-search">
-          <form action="#">
-            <div class="row">
-              <!-- Store Search -->
-
-    <!-- <div class="col-lg-6 col-md-12">
-                <div class="block d-flex">
-                  <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="search" placeholder="Search for project">
-                </div>
-              </div>
-              <div class="col-lg-6 col-md-12">
-                <div class="block d-flex">
-                  <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="search" placeholder="Search for project">
-                  <!-- Search Button -->
-    <!-- <button class="btn btn-main">SEARCH</button>
-                </div>
-              </div>
-            </div>
-          </form>
-        </div> -->
+  </div>
 
 
 
-    <div class="row my-5 py-5 events">
-      <div class="col-md-4 mb-3" *ngFor="let event of events">
+  <div class="text-center py-5">
+    <h2 class="text-center text-uppercase font-weight-bold mt-5">Latest Projects</h2>
+    <hr class="hr-blue">
+  </div>
+
+
+
+
+  <div class="container mx-auto py-5 events">
+    <div class="row">
+      <div class="col-md-4 mb-5" *ngFor="let event of events">
 
 
         <!-- ONE PROJECT CARD-->
@@ -63,5 +57,18 @@
 
       </div>
     </div>
-  </section>
-</div>
+  </div>
+
+
+  <div class="row bg-sec pb-5">
+    <div class="mx-auto text-center col-12 mt-5">
+
+
+      <img class="img-fluid project-img mt-5" src="../../assets/teamwork.png">
+
+
+
+    </div>
+  </div>
+
+</section>

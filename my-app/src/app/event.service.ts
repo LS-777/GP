@@ -35,6 +35,7 @@ export class EventService {
             this.events.splice(i, 1);
           }
           if (this.myEvents) {
+            // tslint:disable-next-line:no-shadowed-variable
             for (let i = 0; i < this.myEvents.length; i++) {
               this.myEvents.splice(i, 1);
             }
