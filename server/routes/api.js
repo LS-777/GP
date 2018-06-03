@@ -1,6 +1,12 @@
+/* here is the controller */
+
+
+
 /*------- IMPORTING MODULES ------ */
 
 const express = require('express');
+const bodyParser = require('body-parser');
+
 const jwt = require('jsonwebtoken');
 const router = express.Router();
 const User = require('../models/user');
@@ -61,13 +67,14 @@ function sendToken(user, res) {
 
 
 
-/* ------------------------------------ROUTES--------------------------------------- */
+/* ===============================   ROUTES   ============================================== */
 
 
 //display this msg in localhost:3000/api to check if all works
 router.get('/', (req, res) => {
     res.send('From API route');
 });
+
 
 
 /* --------------------------- USERS ---------------------------*/
@@ -138,7 +145,7 @@ router.post('/login', (req, res) => {
 });
 
 
-/*********  UPDATE USER (POST) (in dashboard too)   *********/
+/*********  UPDATE USER (in dashboard too)   *********/
 router.post('/edit/:userId', (req, res, next) => {
     User.findByIdAndUpdate({
         _id: req.params.userId
@@ -149,7 +156,7 @@ router.post('/edit/:userId', (req, res, next) => {
     });
 });
 
-/*********    /DELETE USER (DELETE) (in dashboard too)    *********/
+/*********    DELETE USER (in dashboard too)    *********/
 router.delete('/remove/:userId', (req, res, next) => {
     User.findByIdAndRemove({
         _id: req.params.userId
@@ -161,11 +168,6 @@ router.delete('/remove/:userId', (req, res, next) => {
 });
 
 /*-------------END USERS ROUTES---------------- */
-
-
-
-
-
 
 
 /* --------------------------- EVENTS ---------------------*/
@@ -186,45 +188,32 @@ router.get('/events', function (req, res) {
 
 
 /*********  GET one event    -------- WORKING   -------    *********/
-router.get('/events/:id', function (req, res, next) {
-    Event.findOne({
-        _id: req.params.id
-    }, function (err, event) { // same as .findById in this format like in "get single event"
-        if (err) return next(err);
-        res.json(event);
-    });
-});
-
-
-/********* get all user posts ----- working but user can't post in his name ------ return an empty array  ********/
-router.get('/posts/:userId', function (req, res, next) {
-    User.findOne({
-        _id: req.params.userId
-    }, function (err, user) {
-        if (err) return next(err);
-        if (user) {
-            Event.find({
-                userId: user.id
-            }, function (err, contents) {
-                if (err) return next(err);
-                res.json(contents);
-            });
-        }
-    });
+router.get('/events/:id', function (req, res) {
+    console.log('Get request for a single event');
+    Event.findById(req.params.id)
+        .exec(function (err, event) {
+            if (err) {
+                console.log('Error retrieving event');
+            } else {
+                res.json(event);
+            }
+        });
 });
 
 
 
 /*********   ADD an event  ------------ WORKING -------------   see how to link event and "owner" ********/
-router.post('/postEvent/:userId', function (req, res, next) {
-    User.findById({
-        _id: req.params.userId
+router.post('/events/add/:username', function (req, res, next) {
+    User.findOne({
+        username: req.params.username
     }, function (err, user) {
         if (err) return next(err);
         if (user) {
             // let eventData = req.body;
             // let event = new Event(Data);
             let event = new Event(req.body);
+            user.userEvents.push(event);
+
             event.save(function (err) {
                 if (err) return next(err);
                 res.json(event);
@@ -235,25 +224,72 @@ router.post('/postEvent/:userId', function (req, res, next) {
 
 
 
+/*********   UPDATE an event  ------------ WORKING -------------   see how to link event and "owner" ********/
+
+router.put('/events/update/:id', function (req, res) {
+    console.log('Update event');
+    Event.findByIdAndUpdate(req.params.id, 
+        {
+            $set: {
+                name: req.body.name,
+                description: req.body.description,
+                category: req.body.category,
+                contact: req.body.contact,
+                date: req.body.date
+            }
+        },
+        {
+            new: true
+        },
+        function(err, updatedEvent) {
+            if(err){
+                res.send("Error updating event");
+            } else {
+                res.json(updatedEvent);
+            }
+        }
+    );
+});
 
 
 
-// edit event   ------- not working -----
-// router.put('/editPost', (req, res, next) => {
-//     Event.findOne({ _id: req.body._id }, (err, event) => {
-//         if (err) return next(err);
 
-//         if (event) {
-//             event.name = req.body.name;
-//             event.description = req.body.description;
-//             event.category = req.body.category;
-//             event.date = req.body.date;
-//             event.save();
-//             res.json(event);
-//         }
-//     });
-// });
+/*********   DELETE an event  ------------ WORKING -------------   see how to link event and "owner" ********/
 
-/*------------------------------- END EVENTS ROUTES -------------------------*/
+router.delete('/events/delete/:id', function(req, res){
+    console.log('Deleting an event');
+    Event.findByIdAndRemove(req.params.id, function(err, deletedEvent){
+        if(err) {
+            res.send("Error deleting event");
+        } else {
+            res.json(deletedEvent);
+        }
+    });
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 module.exports = router;

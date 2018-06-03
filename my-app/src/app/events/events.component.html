@@ -45,7 +45,7 @@
                 </li>
               </ul>
             </div>
-            <a href="#" class="btn btn-block btn-proj font-weight-bold border">JOIN</a>
+            <a href="#" class="btn btn-block btn-proj font-weight-bold border">{{event.contact}}</a>
           </div>
           <div class="card-footer text-light card-end proj-date">
             <i class="far fa-calendar-alt"></i>
@@ -68,6 +68,48 @@
 
 
 
+    </div>
+  </div>
+  <div class="text-center mt-5 pt-5">
+    <h2 class="text-center text-uppercase font-weight-bold"> Post a project</h2>
+    <hr>
+  </div>
+  <div class="row">
+
+    <div class="col-md-4 mx-auto text-center">
+      <!-- project card POST form-->
+      <!-- <div class="card mx-auto text-center mt-5">
+        <div class="card-header card-end">
+
+          <label for="" class="text-light">PROJECT_NAME</label>
+          <div class="form-group">
+            <input [(ngModel)]="eventData.projectName" name="project_name" type="text" class="form-control rounded-0" placeholder="Superb Project">
+          </div>
+
+        </div>
+        <div class="card-body project">
+          <label for="">PROJECT_DESCRIPTION</label>
+          <div class="form-group">
+            <textarea [(ngModel)]="eventData.projectDesc" name="project_description" type="text" class="form-control rounded-0" placeholder="An awesome project ready to be done">
+            </textarea>
+          </div>
+          <div class="short-popular-category-list mb-0">
+            <label for="" class="category">PROJECT_CATEGORY</label>
+          </div>
+          <div class="form-group mt-0">
+            <input [(ngModel)]="eventData.projectCat" name="project_category" type="text" class="form-control rounded-0" placeholder="angular">
+          </div>
+          <button (click)="addEvent()" type="button" class="btn btn-block btn-proj font-weight-bold border">POST YOUR PROJECT</button>
+        </div>
+        <div class="card-footer text-light card-end proj-date">
+          <label for="">PROJECT_DATE</label>
+          <div class="form-group mt-0">
+            <input [(ngModel)]="eventData.projectDate" name="project_date" type="text" class="form-control rounded-0">
+          </div>
+
+        </div>
+      </div> -->
+      <!-- end project card -->
     </div>
   </div>
 
