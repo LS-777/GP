@@ -23,7 +23,7 @@ export class EventDetailsComponent implements OnInit {
     this.event = this._eventService.selectedEvent;
   }
 
-  updateEvent() { // working BUT returning an empty event
+  updateEvent() { // function to update an existing event
     this._eventService.editEvent(this.eventModel).subscribe(res => {
       console.log(res);
       this.router.navigate(['/events']);
