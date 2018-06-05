@@ -1,0 +1,25 @@
+
+
+.listevents {
+  border: 0.33vh solid #1f3d55;
+  border-radius: 0.25em;
+}
+
+btn{
+    background: white;
+}
+
+li {
+  font-size: 1.5em;
+  border-bottom: 0.33vh solid #1f3d55;
+  border-top: 0.33vh solid #1f3d55;
+
+}
+
+li:hover {
+  font-size: 2em;
+  font-family: 'Franklin Gothic Bold', 'Arial Narrow', Arial, sans-serif;
+  color: #f6ae01;
+  background: linear-gradient(20deg, #20a0e9, #1f3d55);
+  cursor: crosshair;
+}

@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -17,6 +18,9 @@ import { TokenInterceptorService } from './token-interceptor.service';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { UserService } from './user.service';
 import { HomeComponent } from './home/home.component';
+import { EventListComponent } from './event-list/event-list.component';
+import { EventDetailsComponent } from './event-details/event-details.component';
+import { EventCenterComponent } from './event-center/event-center.component';
 
 @NgModule({
   declarations: [
@@ -28,12 +32,16 @@ import { HomeComponent } from './home/home.component';
     HeaderComponent,
     FooterComponent,
     DashboardComponent,
-    HomeComponent
+    HomeComponent,
+    EventListComponent,
+    EventDetailsComponent,
+    EventCenterComponent
     ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
+    HttpModule,
     AppRoutingModule
   ],
   providers: [AuthService, AuthGuard, EventService, UserService

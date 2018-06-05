@@ -1,0 +1,60 @@
+.hr-blue {
+  width: 5%;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: 0;
+  border-top: 3px solid rgba(31, 61, 85, 1);
+}
+
+.sub-invit {
+  font-size: 0.8rem;
+}
+
+.form-wh {
+  border: 0.33vh solid #1f3d55;
+}
+
+.form-header {
+  font-family: 'Franklin Gothic Bold', 'Arial Narrow', Arial, sans-serif;
+  color: #f6ae01;
+  font-weight: bold;
+  font-size: 2.8rem;
+  letter-spacing: 1px;
+  border-bottom: 0.33vh solid #1f3d55;
+  background: linear-gradient(20deg, #20a0e9, #1f3d55);
+  background-size: 1000% 1000% !important;
+  -webkit-animation: changeColors 10s ease infinite;
+  -moz-animation: changeColors 5s ease infinite;
+  -o-animation: changeColors 10s ease infinite;
+  animation: changeColors 5s ease infinite;
+}
+
+@keyframes changeColors {
+  0% {
+    background-position: 0 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
+}
+
+@-webkit-keyframes changeColors {
+  0% {
+    background-position: 0 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
+}
+
+
+.add-project{
+  background-color: #8fcff5;
+
+}

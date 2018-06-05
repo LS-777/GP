@@ -13,10 +13,6 @@
     </div>
   </div>
 
-
-
-
-
   <div class="row">
     <!-- user account editing part-->
     <div class="col-lg-6 col-md-10 col-sm-11 d-inline-block my-5 mx-auto">
@@ -42,9 +38,13 @@
               <input [(ngModel)]="userData.password" name="password" type="password" class="form-control rounded-0">
             </div>
 
-            <div class="form-group mx-auto mt-5">
-              <button (click)="saveUser()" type="button" class="btn btn-primary btn-lg">Save</button> or...
-              <button (click)="deleteUser()" type="button" class="btn btn-danger btn-lg">Delete account</button>
+            <div class="form-group sub-invit">
+                Bored of our services? <a (click)="deleteUser()" class="text-danger" >You can click here to Delete your account!</a>
+              </div>
+
+            <div class="form-group mx-auto text-center mt-5">
+              <button (click)="saveUser()" type="button" class="btn btn-outline-primary btn-lg float-right">Save</button> 
+              <!-- <button (click)="deleteUser()" type="button" class="btn btn-outline-danger btn ">Delete account</button> -->
             </div>
 
           </form>
@@ -54,20 +54,7 @@
   </div>
 
 
-
-
-  <!-- get a list of users projects HERE-->
-
-
-
-
-
-
-
-  
-
-
-
+<event-center></event-center>
 
 
 </section>

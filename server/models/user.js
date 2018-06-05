@@ -20,14 +20,14 @@ const userSchema = new Schema({
         type: String,
         required: true
     },
-    userEvents: [{                          // adding event id to an array for all events created by the user 
-        type: Schema.Types.ObjectId,
-        ref: 'Event'
-    }]
+    // userEvents: [{                          // adding event id to an array for all events created by the user 
+    //     type: Schema.Types.ObjectId,
+    //     ref: 'Event'
+    // }]
 
 });
 
-module.exports = mongoose.model('User', userSchema);
+module.exports = mongoose.model('User', userSchema, 'users');
 
 
 

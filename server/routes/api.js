@@ -202,29 +202,19 @@ router.get('/events/:id', function (req, res) {
 
 
 
-/*********   ADD an event  ------------ WORKING -------------   see how to link event and "owner" ********/
-router.post('/events/add/:username', function (req, res, next) {
-    User.findOne({
-        username: req.params.username
-    }, function (err, user) {
-        if (err) return next(err);
-        if (user) {
-            // let eventData = req.body;
-            // let event = new Event(Data);
-            let event = new Event(req.body);
-            user.userEvents.push(event);
+/*********   ADD an event  ------------ WORKING ------------- */
+router.post('/events/add', function (req, res, next) { //('/events/add/:username' de base
+    let event = new Event(req.body);
 
-            event.save(function (err) {
-                if (err) return next(err);
-                res.json(event);
-            });
-        }
+    event.save(function (err) {
+        if (err) return next(err);
+        res.json(event);
     });
 });
 
 
 
-/*********   UPDATE an event  ------------ WORKING -------------   see how to link event and "owner" ********/
+/*********   UPDATE an event  ------------ WORKING -------------*/
 
 router.put('/events/update/:id', function (req, res) {
     console.log('Update event');

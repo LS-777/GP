@@ -2,12 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 
-const eventSchema = new Schema({    
-    
-    owner: {
-        type: Schema.Types.ObjectId,  // adding user id to all events created by the user 
-        ref: 'User'
-    },
+const eventSchema = new Schema({
     name: {
         type: String,
         required: true

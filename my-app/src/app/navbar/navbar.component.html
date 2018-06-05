@@ -21,7 +21,7 @@
       <a class="nav-link text-light" *ngIf="!_authService.loggedIn()" routerLink="/login" routerLinkActive="active">Login</a>
       <a class="nav-link text-light" *ngIf="!_authService.loggedIn()" routerLink="/register" routerLinkActive="active">Register</a>
       <a class="nav-link text-light" *ngIf="_authService.loggedIn()" routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
-      <a class="nav-link text-light" *ngIf="_authService.loggedIn()" (click)="_authService.logoutUser()">Logout</a>
+      <a class="nav-link text-light" *ngIf="_authService.loggedIn()" (click)="_authService.logoutUser()" style="cursor: pointer">Logout</a>
     </ul>
   </div>
   </nav>

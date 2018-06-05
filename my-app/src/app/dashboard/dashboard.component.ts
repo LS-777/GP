@@ -5,7 +5,7 @@ import { UserService } from '../user.service';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.css']
+  styleUrls: ['./dashboard.component.css'],
 })
 export class DashboardComponent implements OnInit {
 
@@ -18,7 +18,6 @@ export class DashboardComponent implements OnInit {
       console.log(res);
     });
   }
-
 
   saveUser() {
     this._user.editUser(this._auth.userId, this.userData).subscribe(res => {
@@ -33,5 +32,4 @@ export class DashboardComponent implements OnInit {
       console.log(res);
     });
   }
-
 }
