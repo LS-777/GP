@@ -1,5 +1,5 @@
 export class EventModel {
-    _id?: string;
+    _id?: string;  // optionnal
     name: string;
     description: string;
     category: string;

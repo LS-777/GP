@@ -3,18 +3,19 @@
 <div class="text-center my-5 py-5">
   <h2 class="text-center text-uppercase font-weight-bold"> Event-center</h2>
   <hr class="hr-blue">
-   <div class="mx-auto">
-        <button (click)="addMode()" class="my-2 btn-lg btn-outline-success" type="button">Add a project</button>
-    </div>
+  <div class="mx-auto">
+    <button (click)="addMode()" class="my-2 btn-lg btn-outline-success" type="button">Add a project</button>
+  </div>
 </div>
 
 
 <div class="row">
 
   <!-- add & edit a project forms-->
-  <div class="col-9 mx-auto my-auto">
+  <div class="col-lg-9 col-md-10 col-sm-11 col-xs-12 d-inline-block mx-auto my-auto">
+
     <!-- display the add project form only if the corresponding button iz clicked-->
-    <div *ngIf="onAddMode" class="col-md-9 d-inline-block ml-5">
+    <div *ngIf="onAddMode" class="col-lg-6 col-md-10 col-sm-11 col-xs-12 mx-auto mb-5">
       <div class="card form-wh">
         <div class="card-header form-header">
           <h3 class="mb-0">Add project</h3>
@@ -31,7 +32,7 @@
             </div>
             <div class="form-group">
               <label>Description</label>
-              <input type="text" name="description" rows="5" class="form-control rounded-0"  [(ngModel)]="eventModel.description">
+              <input type="text" name="description" rows="5" class="form-control rounded-0" [(ngModel)]="eventModel.description">
             </div>
             <div class="form-group">
               <label>Category</label>
@@ -55,16 +56,17 @@
       </div>
     </div>
 
-
     <!-- edit project details form-->
-    <app-event-details  *ngIf="_eventService.selectedEvent" ></app-event-details> <!-- please check  -->
+    <app-event-details *ngIf="_eventService.selectedEvent"></app-event-details>
+    <!-- please check  -->
   </div>
 
   <!-- displayin the list of projects, and assign it to the property selected project-->
-  <div class="col-sm-3 text-center my-auto p-5 projects-list-box">
-      <h3 class="text-center text-uppercase font-weight-bold"> Projects List</h3>
-      <hr class="hr-blue">
-   
+  <div class="col-lg-3 col-sm-8 d-inline-block mx-auto my-auto projects-list-box">
+
+    <h3 class="text-center text-uppercase font-weight-bold"> Projects List</h3>
+    <hr class="hr-blue">
+
     <app-event-list></app-event-list>
   </div>
 

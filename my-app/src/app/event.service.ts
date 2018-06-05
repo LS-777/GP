@@ -13,10 +13,7 @@ export class EventService {
   // back-end route reference -- check the port!!
   private _getUrl = 'http://localhost:3000/api/events';
   private _postUrl = 'http://localhost:3000/api/events/add';  // check if its not the adress shitting
-  private _putUrl = 'http://localhost:3000/events/update/';
-  /* "/" at the end cuz event id will be following -not working -
-  returning this message: "Http failure response for http://localhost:3000/events/update/5b15d493f48405300414d36d: 404 Not Found"
-  check where do the ":" fuckin come from*/
+  private _putUrl = 'http://localhost:3000/api/events/update/'; // "/" at the end cuz event id will be following
   private _deleteUrl = 'http://localhost:3000/api/events/delete/'; // "/" at the end cuz event id will be following
 
   constructor(private _http: HttpClient) { }
@@ -32,7 +29,7 @@ export class EventService {
   }
 
 
-  // edit event, from the EVENTS-DETAILS component  --- not working
+  // edit event, from the EVENTS-DETAILS component  --- working BUT -- when updated, returns an empty event
   editEvent(event: EventModel) {
     return this._http.put(this._putUrl + this.selectedEvent['_id'], event);
   }

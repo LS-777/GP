@@ -23,9 +23,10 @@ export class EventDetailsComponent implements OnInit {
     this.event = this._eventService.selectedEvent;
   }
 
-  updateEvent() { // not working
+  updateEvent() { // working BUT returning an empty event
     this._eventService.editEvent(this.eventModel).subscribe(res => {
       console.log(res);
+      this.router.navigate(['/events']);
     });
   }
 
