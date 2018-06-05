@@ -93,8 +93,7 @@ router.get('/userlist', function (req, res) {
 });
 
 
-/*********    GET ONE USER for showing his data in the dashboard in the front ---- WORKING ------- 
- * BUT WHEN IT'S PRESENT EVENTS CANNOT BE DISPLAYED ! CONFLICTS WITH DASHBOARD   ------- CHECK USER SERVICE *********/
+/*********    GET ONE USER for showing his data in the dashboard in the front ---- WORKING -------*********/
 router.get('/user/:userId', (req, res, next) => {
     User.findById({
         _id: req.params.userId
@@ -171,7 +170,6 @@ router.delete('/remove/:userId', (req, res, next) => {
 
 
 /* --------------------------- EVENTS ---------------------*/
-//events routes, TODO: get the user able to post his own events in the events page 
 
 /********* GET all events    ----------- WORKING   ---------   *******/
 router.get('/events', function (req, res) {
@@ -244,7 +242,7 @@ router.put('/events/update/:id', function (req, res) {
 
 
 
-/*********   DELETE an event  ------------ WORKING -------------   see how to link event and "owner" ********/
+/*********   DELETE an event  ------------ WORKING -------------  ********/
 
 router.delete('/events/delete/:id', function(req, res){
     console.log('Deleting an event');

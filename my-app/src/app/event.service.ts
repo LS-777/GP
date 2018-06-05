@@ -29,9 +29,9 @@ export class EventService {
   }
 
 
-  // edit event, from the EVENTS-DETAILS component  --- working BUT -- when updated, returns an empty event
+  // edit event, from the EVENTS-DETAILS component  --- working BUT -- when updated, returns an event with "null" values
   editEvent(event: EventModel) {
-    return this._http.put(this._putUrl + this.selectedEvent['_id'], event);
+    return this._http.put(this._putUrl + this.selectedEvent['_id'], this.selectedEvent);
   }
 
 
