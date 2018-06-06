@@ -12,7 +12,7 @@ __Before downloading the full zipped folder, please be sure to have in your comp
 
 ---
 
-#Alt-H1 After downloading (or cloning it) the folder on your machine
+## After downloading (or cloning it) the folder on your machine
 ### Here are the steps to make run the app properly.
 
 1. Unzip the folder 
