@@ -14,6 +14,10 @@ section{max-width: 100%;}
   border-top: 0.13vh solid #1f3d55;
 }
 
+.btn-proj:hover{
+  color:white;
+}
+
 footer{
   width: 100%;
 }

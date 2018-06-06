@@ -4,7 +4,8 @@
   <h2 class="text-center text-uppercase font-weight-bold"> Event-center</h2>
   <hr class="hr-blue">
   <div class="mx-auto">
-    <button (click)="addMode()" class="my-2 btn-lg btn-success font-weight-bold" type="button">Add a project</button>
+      <p class="font-weight-bold text-center my-5">Click to switch on add project mode!</p>
+      <button (click)="addMode()" class="my-2 btn-lg btn-success font-weight-bold" type="button">Add a project</button>
   </div>
 </div>
 
@@ -16,6 +17,10 @@
 
     <!-- display the add project form only if the corresponding button iz clicked-->
     <div *ngIf="onAddMode" class="col-lg-10 col-md-10 col-sm-11 col-xs-12 mx-auto mb-5">
+      <div class="text-center my-5 py-5">
+        <h2 class="text-center text-uppercase font-weight-bold"> Create a new project</h2>
+        <hr class="hr-blue">
+      </div>
       <div class="card form-wh">
         <div class="card-header form-header">
           <h3 class="mb-0">Add project</h3>

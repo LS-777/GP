@@ -22,6 +22,7 @@ import { EventListComponent } from './event-list/event-list.component';
 import { EventDetailsComponent } from './event-details/event-details.component';
 import { EventCenterComponent } from './event-center/event-center.component';
 import { SortPipe } from './sort.pipe';
+import { SearchPipe } from './search.pipe';
 
 
 
@@ -40,6 +41,7 @@ import { SortPipe } from './sort.pipe';
     EventDetailsComponent,
     EventCenterComponent,
     SortPipe,
+    SearchPipe,
   ],
   imports: [
     BrowserModule,

@@ -1,9 +1,10 @@
 import { Pipe, PipeTransform } from '@angular/core';
-
+import { EventModel } from './event';
 @Pipe({
   name: 'sort'
 })
 export class SortPipe implements PipeTransform {
+
 
   transform(array: Array<string>, args?: any): Array<string> {
     return array.sort(function(a, b) {

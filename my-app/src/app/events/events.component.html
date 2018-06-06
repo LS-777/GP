@@ -3,7 +3,7 @@
 
 
 
- 
+
 
 
   <!-- Header banner-->
@@ -14,9 +14,14 @@
 
 
       <!-- welcome message -->
-      <h3 class="mt-5 text-light">Here we are!</h3>
+      <h2 class="text-center text-uppercase font-weight-bold mt-5">HERE WE ARE</h2>
+      <hr class="hr-blue">
       <p class="text-light font-weight-bold mt-5 mx-2">You can see all pending projects - let's work!
       </p>
+      <div class="row">
+        <a class="btn btn-proj font-weight-bold border my-5 mx-auto" routerLink="/login" routerLinkActive="active">SIGN IN</a>
+      </div>
+
       <img class="img-fluid project-img mt-5" src="../../assets/projects.png">
 
 
@@ -26,30 +31,32 @@
 
 
 
-  <div class="text-center py-5">
+  <div class="text-center py-5 my-5">
     <h2 class="text-center text-uppercase font-weight-bold mt-5">Latest Projects</h2>
     <hr class="hr-blue">
+  </div>
+  <div class="container">
+    <h5>We provide the board, you're the actors, each user can manage ALL projects, as post-it notes are reachable by all, feel
+      free to create, read, update, or even delete any project note! </h5>
   </div>
 
 
 
   <!-- SEARCH BAR -->
-  <div class="row text-center">
-      <div class="col-md-12 bg-dark py-5 px-2 rounded mx-auto searchBox border border-dark">
-        <input #query (keyup)="search(query.value)" type="text" class="col-8 form-control d-inline-block" placeholder="Search for an event... "
-        />
-        <button class="btn btn-danger d-inline-block btn ml-0" (click)="resetQuery()" [disabled]="!query">&times;</button>
-      </div>
+  <div class="row text-center my-5">
+    <div class="col-md-12 bg-dark py-5 px-2 rounded mx-auto searchBox border border-dark">
+      <input #query [(ngModel)]="terms" type="text" class="col-8 form-control d-inline-block" placeholder="Type to filter events by name... "
+      />
     </div>
+  </div>
 
 
 
-  <!-- ADD BUTTON TO FETCH RESULTS LIKE: ALPHABETICAL ORDER, ONLY USER PROJECTS, AND FETCH BY USER (BY USERDATA.MAIL OR EVENTDATE.MAIL)-->
 
 
   <div class="container mx-auto py-5 events">
     <div class="row">
-      <div class="col-md-4 mb-5" *ngFor="let event of events">
+      <div class="col-md-4 mb-5" *ngFor="let event of events | search : terms">
 
 
         <!-- ONE PROJECT CARD-->

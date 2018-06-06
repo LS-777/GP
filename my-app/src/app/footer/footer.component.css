@@ -1,5 +1,5 @@
 .footer{
-    width: 100wh;
+    width: 100%;
     color: white;
     border-top: 0.33vh solid #1f3d55;
     background: linear-gradient(20deg,#8fcff5,#20a0e9,#1f3d55); 
@@ -19,9 +19,12 @@ footer h2{
 
 
 i{
+    color:#fff;
+}
+
+i:hover{
     color:#f6ae01;
-    
-    margin-top: 4%;;
+
 }
 
 /* background opacity */ 
