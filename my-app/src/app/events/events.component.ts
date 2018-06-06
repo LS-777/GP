@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { EventService } from '../event.service';
+import { AuthService } from '../auth.service';
+// import { SearchService } from '../search.service';
+
 
 @Component({
   selector: 'app-events',
@@ -8,14 +11,24 @@ import { EventService } from '../event.service';
 })
 export class EventsComponent implements OnInit {
 
+
+
   events: any;
+  query: String;
+
   constructor(private _eventService: EventService) { }
 
   ngOnInit() {
     this._eventService.getEvents()
       .subscribe(
         res => this.events = res,
-         err => console.log(err)
+        err => console.log(err)
       );
   }
+
+
+  // resetQuery() {
+  //   this.query = '';
+  //   this.displayedEvents = this.events;
+  // }
 }

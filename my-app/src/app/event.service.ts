@@ -20,7 +20,7 @@ export class EventService {
 
   // fetch all events (in the WALL & EVENTS-CENTER)
   getEvents() {
-    return this._http.get(this._getUrl);
+    return this._http.get<any>(this._getUrl);
   }
 
   // create a new event, from the EVENTS-CENTER component

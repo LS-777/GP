@@ -1,8 +1,17 @@
 <!-- ---------EVENTS LIST PART---------->
 <section class="">
+
+
+
+ 
+
+
   <!-- Header banner-->
-  <div class="row bg-sec pb-4">
+  <div class="row bg-sec pb-4 bb-blue">
     <div class="mx-auto text-center col-12 mt-5">
+
+
+
 
       <!-- welcome message -->
       <h3 class="mt-5 text-light">Here we are!</h3>
@@ -21,6 +30,19 @@
     <h2 class="text-center text-uppercase font-weight-bold mt-5">Latest Projects</h2>
     <hr class="hr-blue">
   </div>
+
+
+
+  <!-- SEARCH BAR -->
+  <div class="row text-center">
+      <div class="col-md-12 bg-dark py-5 px-2 rounded mx-auto searchBox border border-dark">
+        <input #query (keyup)="search(query.value)" type="text" class="col-8 form-control d-inline-block" placeholder="Search for an event... "
+        />
+        <button class="btn btn-danger d-inline-block btn ml-0" (click)="resetQuery()" [disabled]="!query">&times;</button>
+      </div>
+    </div>
+
+
 
   <!-- ADD BUTTON TO FETCH RESULTS LIKE: ALPHABETICAL ORDER, ONLY USER PROJECTS, AND FETCH BY USER (BY USERDATA.MAIL OR EVENTDATE.MAIL)-->
 
@@ -60,7 +82,7 @@
   </div>
 
 
-  <div class="row bg-sec pb-5">
+  <div class="row bg-sec pb-5 bt-blue">
     <div class="mx-auto text-center col-12 mt-5">
 
 

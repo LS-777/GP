@@ -111,6 +111,10 @@
     padding: 100px 0;
   }
   
+
+  .bt-blue{
+    border-top: 0.13vh solid #1f3d55;
+  }
   .section-sm {
     padding: 70px 0;
   }

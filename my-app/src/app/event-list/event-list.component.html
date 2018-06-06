@@ -1,10 +1,15 @@
-
 <div class="mt-5 col-sm-12 col-lg-10 mx-auto">
 
- <div class="list-group text-center listevents bg-light">
-    <li (click)="onSelect(event)" class="list-group-item list-group-item-action text-uppercase" *ngFor="let event of events">
-      <a>{{event.name}}</a>
+
+  <div class="mx-auto text-center mb-5 ">
+    <button class="btn-primary btn-lg" (click)="sort()">Sort</button>
+  </div>
+
+  <div class="list-group text-center listevents ">
+    <li (click)="onSelect(event)" class="list-group-item list-group-item-action text-uppercase" *ngFor="let event of events | sort: {property: column, order: order}">
+      <a>{{event.name}}</a> |
+      <a>{{event.contact}}</a>
     </li>
   </div>
 
-  </div>
+</div>

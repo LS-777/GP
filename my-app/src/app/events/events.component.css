@@ -1,6 +1,19 @@
 section{max-width: 100%;}
 
 
+.searchBox{
+  background: linear-gradient(20deg,#20a0e9,#1f3d55); 
+
+}
+
+.bb-blue{
+  border-bottom: 0.13vh solid #1f3d55;
+}
+
+.bt-blue{
+  border-top: 0.13vh solid #1f3d55;
+}
+
 footer{
   width: 100%;
 }

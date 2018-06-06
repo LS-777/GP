@@ -21,6 +21,9 @@ import { HomeComponent } from './home/home.component';
 import { EventListComponent } from './event-list/event-list.component';
 import { EventDetailsComponent } from './event-details/event-details.component';
 import { EventCenterComponent } from './event-center/event-center.component';
+import { SortPipe } from './sort.pipe';
+
+
 
 @NgModule({
   declarations: [
@@ -35,8 +38,9 @@ import { EventCenterComponent } from './event-center/event-center.component';
     HomeComponent,
     EventListComponent,
     EventDetailsComponent,
-    EventCenterComponent
-    ],
+    EventCenterComponent,
+    SortPipe,
+  ],
   imports: [
     BrowserModule,
     FormsModule,
@@ -45,11 +49,11 @@ import { EventCenterComponent } from './event-center/event-center.component';
     AppRoutingModule
   ],
   providers: [AuthService, AuthGuard, EventService, UserService
-  , {
-    provide: HTTP_INTERCEPTORS,
-    useClass: TokenInterceptorService,
-    multi: true
-  }],
+    , {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptorService,
+      multi: true
+    }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

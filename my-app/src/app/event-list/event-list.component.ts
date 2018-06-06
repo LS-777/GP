@@ -9,8 +9,10 @@ import { EventService } from '../event.service';
 })
 export class EventListComponent implements OnInit {
 
-  events: any;
-
+  events: Event[];
+  descending = false;
+  order: number;
+  column = 'name';
 
   constructor(private _eventService: EventService) { }
 
@@ -24,4 +26,15 @@ export class EventListComponent implements OnInit {
     this._eventService.selectedEvent = proj;
     console.log(proj);
   }
+
+
+
+  sort() {
+    this.descending = !this.descending;
+    this.order = this.descending ? 1 : -1;
+  }
+
+
+
+
 }

@@ -7,7 +7,12 @@
 
 /* change the background color */
 .navbar-custom {
-    background-color: #1f3d55;
+        height: 66px;
+        width: 100wh;
+        color: white;
+        border-bottom: 0.33vh solid #1f3d55;
+        background: linear-gradient(20deg,#1f3d55,#22668e,#1f3d55); 
+        
 }
 /* change the brand and text color */
     .navbar-custom .navbar-brand{
