@@ -8,6 +8,7 @@ __Before downloading the full zipped folder, please be sure to have in your comp
 + An IDE (text-editor),
 + An Internet connection,
 + Up-to-date Web browser,
++ Node js & MongoDB installed
 + Some coffee & some forbearance are highly recommended! 
 
 ---
