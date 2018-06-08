@@ -16,23 +16,23 @@
         <form class="form">
           <div class="form-group">
             <label for="">Name</label>
-            <input [(ngModel)]="event.name" name="name" type="text" class="form-control rounded-0">
+            <input [(ngModel)]="_eventService.selectedEvent.name" name="name" type="text" class="form-control rounded-0">
           </div>
           <div class="form-group">
             <label for="">Description</label>
-            <input [(ngModel)]="event.description" name="description" type="text" rows="5" class="form-control rounded-0">
+            <input [(ngModel)]="_eventService.selectedEvent.description" name="description" type="text" rows="5" class="form-control rounded-0">
           </div>
           <div class="form-group">
             <label for="">Category</label>
-            <input [(ngModel)]="event.category" name="category" type="text" class="form-control rounded-0">
+            <input [(ngModel)]="_eventService.selectedEvent.category" name="category" type="text" class="form-control rounded-0">
           </div>
           <div class="form-group">
             <label for="">Contact</label>
-            <input [(ngModel)]="event.contact" name="contact" type="text" class="form-control rounded-0">
+            <input [(ngModel)]="_eventService.selectedEvent.contact" name="contact" type="text" class="form-control rounded-0">
           </div>
           <div class="form-group">
             <label for="">Date</label>
-            <input [(ngModel)]="event.date" name="date" type="text" class="form-control rounded-0">
+            <input [(ngModel)]="_eventService.selectedEvent.date" name="date" type="text" class="form-control rounded-0">
           </div>
           <div class="form-group mx-auto mt-5">
             <button (click)="updateEvent()" type="button" class="btn btn-outline-primary btn-lg">Update</button> 

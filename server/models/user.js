@@ -7,7 +7,7 @@ const userSchema = new Schema({
         type: String,
         match: /^[a-zA-Z0-9-_]+$/, // prevent from using banned chracters or malicious scripts
         required: true,
-        trim: true,   // suppresses blank spaces at the start and the end of a string
+        trim: true, // suppresses blank spaces at the start and the end of a string
         unique: true
     },
     email: {
@@ -20,14 +20,11 @@ const userSchema = new Schema({
         type: String,
         required: true
     },
-    // userEvents: [{                          // adding event id to an array for all events created by the user 
-    //     type: Schema.Types.ObjectId,
-    //     ref: 'Event'
-    // }]
+    /* userEvents: [{                          // adding event id to an array for all events created by the user 
+         type: Schema.Types.ObjectId,
+         ref: 'Event'
+ }]*/
 
 });
 
 module.exports = mongoose.model('User', userSchema, 'users');
-
-
-

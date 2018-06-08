@@ -13,14 +13,12 @@ import { ActivatedRoute, Router } from '@angular/router';
 
 export class EventDetailsComponent implements OnInit {
 
-  event: any;
   eventModel: any;
 
   updateEventEvent: any;
   constructor(private _eventService: EventService, private router: Router) { }
 
   ngOnInit() {
-    this.event = this._eventService.selectedEvent;
   }
 
   updateEvent() { // function to update an existing event
